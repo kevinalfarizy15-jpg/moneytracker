@@ -15,11 +15,22 @@
   <h1>Money Tracker Connected</h1>
 
   <script type="module">
-    import { initializeApp } 
-    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+const auth = getAuth(app);
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDxRXZU1RGdEXQGNDyxg0ww7a-83_hwL-Q",
+      authDomain: "moneytracker-5ccc0.firebaseapp.com",
+      projectId: "moneytracker-5ccc0",
+      storageBucket: "moneytracker-5ccc0.firebasestorage.app",
+      messagingSenderId: "793139776045",
+      appId: "1:793139776045:web:f71cc34795ee83f87146a4"
+    };
+
+    const app = initializeApp(firebaseConfig);
+
 const auth = getAuth(app);
 
 const emailInput = document.getElementById("email");
@@ -45,17 +56,7 @@ document.getElementById("login").addEventListener("click", () => {
       status.innerText = error.message;
     });
 });
-    const firebaseConfig = {
-      apiKey: "AIzaSyDxRXZU1RGdEXQGNDyxg0ww7a-83_hwL-Q",
-      authDomain: "moneytracker-5ccc0.firebaseapp.com",
-      projectId: "moneytracker-5ccc0",
-      storageBucket: "moneytracker-5ccc0.firebasestorage.app",
-      messagingSenderId: "793139776045",
-      appId: "1:793139776045:web:f71cc34795ee83f87146a4"
-    };
-
-    const app = initializeApp(firebaseConfig);
-
+    
     console.log("Firebase Connected!");
   </script>
 </body>
