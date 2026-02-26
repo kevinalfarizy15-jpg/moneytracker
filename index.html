@@ -4,7 +4,23 @@
   <title>Money Tracker</title>
 </head>
 <body>
-  <h1>Website Saya Berhasil!</h1>
-  <p>Ini website pertama saya.</p>
+  <h1>Money Tracker Connected</h1>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDxRXZU1RGdEXQGNDyxg0ww7a-83_hwL-Q",
+      authDomain: "moneytracker-5ccc0.firebaseapp.com",
+      projectId: "moneytracker-5ccc0",
+      storageBucket: "moneytracker-5ccc0.firebasestorage.app",
+      messagingSenderId: "793139776045",
+      appId: "1:793139776045:web:f71cc34795ee83f87146a4"
+    };
+
+    const app = initializeApp(firebaseConfig);
+
+    console.log("Firebase Connected!");
+  </script>
 </body>
 </html>
