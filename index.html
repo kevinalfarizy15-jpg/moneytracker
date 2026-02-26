@@ -31,30 +31,34 @@ const auth = getAuth(app);
 
     const app = initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+window.addEventListener("DOMContentLoaded", () => {
 
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const status = document.getElementById("status");
+  const auth = getAuth(app);
 
-document.getElementById("register").addEventListener("click", () => {
-  createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
-    .then((userCredential) => {
-      status.innerText = "Register Berhasil!";
-    })
-    .catch((error) => {
-      status.innerText = error.message;
-    });
-});
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const status = document.getElementById("status");
 
-document.getElementById("login").addEventListener("click", () => {
-  signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
-    .then((userCredential) => {
-      status.innerText = "Login Berhasil!";
-    })
-    .catch((error) => {
-      status.innerText = error.message;
-    });
+  document.getElementById("register").addEventListener("click", () => {
+    createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
+      .then(() => {
+        status.innerText = "Register Berhasil!";
+      })
+      .catch((error) => {
+        status.innerText = error.message;
+      });
+  });
+
+  document.getElementById("login").addEventListener("click", () => {
+    signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
+      .then(() => {
+        status.innerText = "Login Berhasil!";
+      })
+      .catch((error) => {
+        status.innerText = error.message;
+      });
+  });
+
 });
     
     console.log("Firebase Connected!");
